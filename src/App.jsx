@@ -22,31 +22,31 @@ const App = () => {
 
   return (
     <main>
-      {screenWidth < minWidthForExperience ? (
+      {/* {screenWidth < minWidthForExperience ? (
         <div style={{ textAlign: "center", padding: "20px" }}>
           <h2>Please use a wider screen for a better experience.</h2>
         </div>
-      ) : (
-        <BrowserRouter>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route
-              path="/*"
-              element={
-                <>
-                  <Routes>
-                    <Route path="/about" element={<About />} />
-                    <Route path="/projects" element={<Projects />} />
-                    <Route path="/contact" element={<Contact />} />
-                  </Routes>
-                  <Footer />
-                </>
-              }
-            />
-          </Routes>
-        </BrowserRouter>
-      )}
+      ) : ( */}
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/*"
+            element={
+              <>
+                <Routes>
+                  <Route path="/about" element={<About />} />
+                  <Route path="/projects" element={<Projects />} />
+                  <Route path="/contact" element={<Contact />} />
+                </Routes>
+                <Footer />
+              </>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
+      {/* )} */}
     </main>
   );
 };
