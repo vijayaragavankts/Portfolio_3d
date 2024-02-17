@@ -7,11 +7,11 @@ import Bird from "../models/Bird";
 import Plane from "../models/Plane";
 import HomeInfo from "../components/HomeInfo";
 import time_audio from "../assets/time.mp3";
-import { music_off, music_on } from "../assets/icons/index";
+import { music_off, music_on, soundoff, soundon } from "../assets/icons/index";
 
 const Home = () => {
   const audioRef = useRef(new Audio(time_audio));
-  audioRef.current.volume = 0.9;
+  audioRef.current.volume = 0.8;
   audioRef.current.loop = true;
 
   const [isRotating, setIsRotating] = useState(false);
@@ -33,7 +33,7 @@ const Home = () => {
 
     if (window.innerWidth < 768) {
       screenScale = [1.2, 1.2, 1.2];
-      screenPosition = [0, -1.3, 0.8];
+      screenPosition = [0, -1.8, 0.8];
     } else {
       screenScale = [3, 3, 3];
       screenPosition = [0, -5, -3];
@@ -47,7 +47,7 @@ const Home = () => {
 
     if (window.innerWidth < 768) {
       screenScale = [0.025, 0.025, 0.025];
-      screenPosition = [0, -6, -29.4];
+      screenPosition = [0, -7.8, -29.4];
     } else {
       screenScale = [0.034, 0.034, 0.04];
       screenPosition = [0, -12, -26.5];
@@ -112,7 +112,7 @@ const Home = () => {
       </Canvas>
       <div className="absolute bottom-2 left-2">
         <img
-          src={isPlayingMusic ? music_on : music_off}
+          src={isPlayingMusic ? soundon : soundoff}
           alt="jukebox"
           onClick={() => setIsPlayingMusic((curr) => !curr)}
           className="w-10 h-10 cursor-pointer object-contain"
