@@ -1,8 +1,10 @@
 import React from "react";
 import { socialLinks } from "../constants";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate(); // Initialize the useNavigate hook
+
   return (
     <footer className="footer font-poppins">
       <hr className="border-slate-200" />
@@ -12,15 +14,27 @@ const Footer = () => {
         </p>
         <div className="flex gap-3 justify-center items-center">
           {socialLinks.map((link, index) => {
-            return (
-              <Link key={index} to={link.links} target="_blank">
-                <img
-                  src={link.iconUrl}
-                  alt={link.name}
-                  className="w-6 h-6 object-contain"
-                />
-              </Link>
-            );
+            if (link.name === "Contact") {
+              return (
+                <button key={index} onClick={() => navigate(link.links)}>
+                  <img
+                    src={link.iconUrl}
+                    alt={link.name}
+                    className="w-6 h-6 object-contain"
+                  />
+                </button>
+              );
+            } else {
+              return (
+                <Link key={index} to={link.links} target="_blank">
+                  <img
+                    src={link.iconUrl}
+                    alt={link.name}
+                    className="w-6 h-6 object-contain"
+                  />
+                </Link>
+              );
+            }
           })}
         </div>
       </div>
