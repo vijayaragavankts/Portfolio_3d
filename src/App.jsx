@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
@@ -20,13 +20,14 @@ const App = () => {
 
   const minWidthForExperience = 768;
 
+  useEffect(() => {
+    if (screenWidth < minWidthForExperience) {
+      alert("Please use a wider screen for a better experience");
+    }
+  }, [screenWidth, minWidthForExperience]);
+
   return (
     <main>
-      {/* {screenWidth < minWidthForExperience ? (
-        <div style={{ textAlign: "center", padding: "20px" }}>
-          <h2>Please use a wider screen for a better experience.</h2>
-        </div>
-      ) : ( */}
       <BrowserRouter>
         <Navbar />
         <Routes>
@@ -46,7 +47,6 @@ const App = () => {
           />
         </Routes>
       </BrowserRouter>
-      {/* )} */}
     </main>
   );
 };
