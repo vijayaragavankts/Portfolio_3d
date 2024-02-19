@@ -18,8 +18,8 @@ const HomeInfo = ({ currentStage }) => {
     return (
       <div className="info-box">
         <p className="font-medium sm:text-xl text-center">
-          I'm passionate about full-stack projects, gaining hands-on experience
-          and valuable skills along the way.
+          Passionate about full-stack projects and acquiring valuable hands-on
+          skills.
         </p>
         <Link to="/about" className="neo-brutalism-white neo-btn">
           Learn More

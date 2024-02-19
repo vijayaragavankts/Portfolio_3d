@@ -8,24 +8,6 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 const App = () => {
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => setScreenWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  const minWidthForExperience = 768;
-
-  useEffect(() => {
-    if (screenWidth < minWidthForExperience) {
-      alert("Please use a wider screen for a better experience");
-    }
-  }, [screenWidth, minWidthForExperience]);
-
   return (
     <main>
       <BrowserRouter>
