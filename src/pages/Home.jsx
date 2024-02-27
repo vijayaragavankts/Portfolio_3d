@@ -67,7 +67,7 @@ const Home = () => {
 
       <Canvas
         className={`w-full h-screen bg-transparent ${
-          isRotating ? "cursor-grapping" : "cursor-grap"
+          isRotating ? "cursor-grabbing" : "cursor-grab"
         }`}
         camera={{
           near: 0.1,
